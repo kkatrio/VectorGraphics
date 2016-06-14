@@ -1,13 +1,14 @@
 #include "widget.h"
 
-#include <QMouseEvent>
-#include <QPainter>
+//#include <QMouseEvent>
+//#include <QPainter>
 
+#include <QtWidgets>
+#include <QDebug>
 
 Widget::Widget(QWidget *parent)
     :QWidget(parent)
 {
-
 
     Proccess = startNew;
 
@@ -23,7 +24,7 @@ void Widget::mousePressEvent(QMouseEvent *event){
 
     pressedPoint = event->pos();
 
-
+    line = NULL;
 }
 
 
@@ -36,6 +37,7 @@ void Widget::mouseMoveEvent(QMouseEvent *event){
     if (Proccess == startNew){
 
         line = new QLine(pressedPoint,pressedPoint);
+        lines.push_back(line);
 
         Proccess = creating;
     }
@@ -55,6 +57,7 @@ void Widget::mouseMoveEvent(QMouseEvent *event){
 
 void Widget::mouseReleaseEvent(QMouseEvent *event){
 
+
     Proccess = startNew;
 
     update();
@@ -66,9 +69,15 @@ void Widget::paintEvent(QPaintEvent *event){
 
     QPainter painter(this);
 
-    if (line != NULL){
 
-        painter.drawLine(*line);
+    for(unsigned i=0; i < lines.size(); i++){
+
+        painter.drawLine(*lines[i]);
+
     }
 
+
 }
+
+
+

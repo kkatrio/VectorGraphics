@@ -3,11 +3,14 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <vector>
 
 //#include "line.h"
 
+class QGraphicsScene;
+class QGraphicsView;
 
-enum ActionType {startNew, creating};
+
 
 
 class Widget : public QWidget
@@ -18,6 +21,7 @@ public:
     Widget(QWidget *parent = 0);
     ~Widget();
 
+    enum ActionType {startNew, creating};
 
 protected:
     void mousePressEvent(QMouseEvent *event);
@@ -29,10 +33,14 @@ protected:
 
 private:
 
+
     QPoint pressedPoint;
     QPoint currentPoint;
 
     QLine *line;
+
+    std::vector<QLine*> lines;
+
 
 };
 
