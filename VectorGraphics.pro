@@ -12,9 +12,15 @@ TARGET = VectorGraphics
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        widget.cpp \
+SOURCES += main.cpp\    
+    mainwindow.cpp \
+    renderarea.cpp \
     line.cpp
+    #widget.cpp \
 
-HEADERS  += widget.h \
+
+
+HEADERS  += mainwindow.h \
+    renderarea.h \
     line.h
+    #widget.h \
