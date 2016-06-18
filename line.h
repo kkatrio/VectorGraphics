@@ -2,11 +2,24 @@
 #define LINE_H
 
 #include <QPoint>
+#include <QLine>
 
-class Line
+class Line : public QLine
 {
 public:
-    Line(const QPoint p1, const QPoint p2);
+
+    Line(QPoint p1,QPoint p2);
+
+
+
+
+
+
+
+private:
+
+
+
 };
 
 #endif // LINE_H
