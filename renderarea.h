@@ -2,8 +2,11 @@
 #define RENDERAREA_H
 
 #include <QWidget>
-#include "line.h"
 #include <vector>
+#include "line.h"
+#include "rectangle.h"
+#include "shape.h"
+
 
 class RenderArea : public QWidget
 {
@@ -28,12 +31,11 @@ protected:
 
 private:
 
-    Line *line;
+    Shape *shape;
+    std::vector<Shape*> shapesList;
 
     QPoint pressedPoint;
     QPoint currentPoint;
-
-    std::vector<Line*> linesList;
 
     bool startDrawing;
     bool finishDrawing;

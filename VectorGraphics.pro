@@ -15,12 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\    
     mainwindow.cpp \
     renderarea.cpp \
-    line.cpp
+    line.cpp \
+    rectangle.cpp \
+    shape.cpp
     #widget.cpp \
 
 
 
 HEADERS  += mainwindow.h \
     renderarea.h \
-    line.h
+    line.h \
+    rectangle.h \
+    shape.h
     #widget.h \

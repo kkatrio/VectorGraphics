@@ -3,16 +3,17 @@
 
 #include <QPoint>
 #include <QLine>
+#include "shape.h"
 
-class Line : public QLine
+class Line : public Shape, public QLine
 {
 public:
 
-    Line(QPoint p1,QPoint p2);
+    Line(const QPoint &p1,const QPoint &p2);
 
 
-
-
+    void resizeShape(const QPoint &p2);
+    void drawShape(QPainter &painter);
 
 
 

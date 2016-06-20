@@ -25,8 +25,9 @@ void RenderArea::mousePressEvent(QMouseEvent *event){
     if(startDrawing){
 
         pressedPoint = event->pos();
-        line = new Line(pressedPoint,pressedPoint);
-        linesList.push_back(line);
+
+        shape = new Rectangle(pressedPoint,pressedPoint);
+        shapesList.push_back(shape);
 
 
         startDrawing = false;
@@ -53,7 +54,8 @@ void RenderArea::mouseMoveEvent(QMouseEvent *event){
     currentPoint = event->pos();
 
     if(!startDrawing && finishDrawing){
-        line->setP2(currentPoint);
+
+        shape->resizeShape(currentPoint);
         update();
     }
 
@@ -72,11 +74,9 @@ void RenderArea::paintEvent(QPaintEvent *event){
 
     QPainter painter(this);
 
-    for(unsigned i=0; i<linesList.size(); i++){
+    for(unsigned i=0; i<shapesList.size(); i++){
 
-
-       painter.drawLine(*linesList[i]);
-
+        shapesList[i]->drawShape(painter);
     }
 
 
