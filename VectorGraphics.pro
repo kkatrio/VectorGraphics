@@ -18,7 +18,7 @@ SOURCES += main.cpp\
     line.cpp \
     rectangle.cpp \
     shape.cpp
-    #widget.cpp \
+
 
 
 
@@ -27,4 +27,3 @@ HEADERS  += mainwindow.h \
     line.h \
     rectangle.h \
     shape.h
-    #widget.h \
