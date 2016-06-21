@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     renderarea.cpp \
     line.cpp \
     rectangle.cpp \
-    shape.cpp
+    shape.cpp \
+    ellipse.cpp
 
 
 
@@ -26,4 +27,8 @@ HEADERS  += mainwindow.h \
     renderarea.h \
     line.h \
     rectangle.h \
-    shape.h
+    shape.h \
+    ellipse.h
+
+RESOURCES += \
+    resources.qrc

@@ -10,6 +10,8 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     //line = NULL; //item
 
     setMouseTracking(true);
+    setBackgroundRole(QPalette::Base);
+    setAutoFillBackground(true);
 
     startDrawing = true;
     finishDrawing = false;
@@ -26,8 +28,28 @@ void RenderArea::mousePressEvent(QMouseEvent *event){
 
         pressedPoint = event->pos();
 
-        shape = new Rectangle(pressedPoint,pressedPoint);
-        shapesList.push_back(shape);
+
+        // creating objects
+
+        if(Type == LineG){
+
+            shape = new Line(pressedPoint,pressedPoint);
+            shapesList.push_back(shape);
+        }
+
+        else if(Type == RectangleG){
+
+            shape = new Rectangle(pressedPoint,pressedPoint);
+            shapesList.push_back(shape);
+        }
+
+        else if(Type == EllipseG){
+
+            shape = new Ellipse(pressedPoint,pressedPoint);
+            shapesList.push_back(shape);
+        }
+
+        //
 
 
         startDrawing = false;
@@ -76,7 +98,7 @@ void RenderArea::paintEvent(QPaintEvent *event){
 
     for(unsigned i=0; i<shapesList.size(); i++){
 
-        shapesList[i]->drawShape(painter);
+        shapesList[i]->drawShape(painter); //shapesList contains pointers
     }
 
 

@@ -5,6 +5,7 @@
 #include <vector>
 #include "line.h"
 #include "rectangle.h"
+#include "ellipse.h"
 #include "shape.h"
 
 
@@ -18,6 +19,10 @@ public:
     RenderArea(QWidget *parent = 0);
     ~RenderArea();
 
+
+    enum ShapeGeometry {LineG,RectangleG,EllipseG};
+
+    ShapeGeometry Type;
 
 
 protected:
@@ -33,6 +38,7 @@ private:
 
     Shape *shape;
     std::vector<Shape*> shapesList;
+
 
     QPoint pressedPoint;
     QPoint currentPoint;

@@ -1,1 +1,7 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/images">
+        <file>circle.png</file>
+        <file>rectangle.png</file>
+        <file>line.png</file>
+    </qresource>
+</RCC>
