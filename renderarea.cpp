@@ -85,14 +85,14 @@ void RenderArea::mouseMoveEvent(QMouseEvent *event){
 }
 
 
-void RenderArea::mouseReleaseEvent(QMouseEvent *event){
+void RenderArea::mouseReleaseEvent(QMouseEvent *){
 
     update();
 }
 
 
 
-void RenderArea::paintEvent(QPaintEvent *event){
+void RenderArea::paintEvent(QPaintEvent *){
 
     QPainter painter(this);
 
